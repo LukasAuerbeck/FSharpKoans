@@ -60,25 +60,19 @@ module ``about the stock example`` =
     
     let splitCommas (x:string) =
         x.Split([|','|])
-    
-    let difference day = 
-        let opening = System.Double.Parse(day[1], System.Globalization.CultureInfo.InvariantCulture)
-        let closing = System.Double.Parse(day[4], System.Globalization.CultureInfo.InvariantCulture)
-        abs(opening - closing)
 
+    let difference (day : string array) : float = 
+        let opening = System.Double.Parse(day.[1])
+        let closing = System.Double.Parse(day.[4])
+        abs(opening - closing)
+        
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-       // let index = 
-       //     stockData
-       //     |> List.tail
-       //     |> List.map splitCommas
-       //     |> List.maxBy differences
-
-       // printfn "%A" index
-        let result = __
-        //let result =
-        //    stockData[]
-
+        
+        let result = 
+            (List.tail stockData
+            |> List.map splitCommas
+            |> List.maxBy difference).[0]
         
         AssertEquality "2012-03-13" result
 
