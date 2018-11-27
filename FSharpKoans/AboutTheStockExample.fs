@@ -57,9 +57,30 @@ module ``about the stock example`` =
     // Feel free to add extra [<Koan>] members here to write
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
+    
+    let splitCommas (x:string) =
+        x.Split([|','|])
+    
+    let difference day = 
+        let opening = System.Double.Parse(day[1], System.Globalization.CultureInfo.InvariantCulture)
+        let closing = System.Double.Parse(day[4], System.Globalization.CultureInfo.InvariantCulture)
+        abs(opening - closing)
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+       // let index = 
+       //     stockData
+       //     |> List.tail
+       //     |> List.map splitCommas
+       //     |> List.maxBy differences
+
+       // printfn "%A" index
+        let result = __
+        //let result =
+        //    stockData[]
+
         
         AssertEquality "2012-03-13" result
+
+
+

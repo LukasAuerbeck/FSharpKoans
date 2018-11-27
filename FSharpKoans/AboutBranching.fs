@@ -81,4 +81,4 @@ module ``about branching`` =
         let person2 = ("Sally", "Burger")
         
         AssertEquality (getDinner person1) "Bob doesn't want red meat"
-        AssertEquality (getDinner person2) "Sally wants 'em some %s"
+        AssertEquality (getDinner person2) "Sally wants 'em some Burger"
